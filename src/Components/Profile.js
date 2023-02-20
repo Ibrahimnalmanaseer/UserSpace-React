@@ -78,11 +78,12 @@ class Profile extends React.Component {
                   <p class="email">{this.state.Info.Email}</p>
                   <p class="sector">{this.state.Info.Sector}</p>
                   <div class="agree-to-terms-container">
-                    <p class="terms-label">Agree to Terms</p>
-                    <p class="agree-to-terms-value">{this.state.Info.AgreeToTerms ? "Yes" : "Not Yet"}</p>
+                    <p class="terms-label" style={{ color: this.state.Info.AgreeToTerms ? 'green' : 'red' }}>Agree to Terms</p>
+                    <p class="agree-to-terms-value" >
+                      {this.state.Info.AgreeToTerms ? "\u2713" : "❌"}</p>
                   </div>
                   
-                  <button onClick={this.handleEditButton} class="edit-button waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Edit</button>
+                  <button onClick={this.handleEditButton} class="edit-button waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Update Your Info  </button>
                 </div>
               </div>
             </div>
