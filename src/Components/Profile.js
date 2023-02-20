@@ -15,20 +15,20 @@ class Profile extends React.Component {
   }
 
 
-  handelClose=()=>{
+  handelModalClose=()=>{
 
     this.setState({
       modalShow:false
     })}
 
-  handlebutton=()=>{
+  handleEditButton=()=>{
 
       this.setState({modalShow:true})
       
      } 
 
 
-  updateInfo=(data)=>{
+  updateUserInfo=(data)=>{
 
       this.setState({
         Info:data
@@ -62,34 +62,32 @@ class Profile extends React.Component {
 
   render() {
     const { user } = this.props.auth0;
-    console.log("info",this.state.Info)
+    
     return (
       <>
 
-<Modal userInfo={this.state.Info} show={this.state.modalShow}  updateInfo={this.updateInfo} closeShow={this.handelClose} />
-       
-
-<div className="container1">
-  <div className="row justify-content-center">
-    <div className="col-md-6">
-      <div className="card">
-        <div class="card-body profile">
-          <div class="profile-pic text-center">
-            <img src={user.picture} alt="user"/></div>
-          <h2 class="name">{this.state.Info.Name}</h2>
-          <p class="email">{this.state.Info.Email}</p>
-          <p class="sector">{this.state.Info.Sector}</p>
-          <div class="agree-to-terms-container">
-            <p class="terms-label">Agree to Terms</p>
-            <p class="agree-to-terms-value">{this.state.Info.AgreeToTerms ? "Yes" : "Not Yet"}</p>
+        <Modal userInfo={this.state.Info} showModal={this.state.modalShow}  updateUserInfo={this.updateUserInfo} closeModal={this.handelModalClose} />
+        <div className="container1">
+          <div className="row justify-content-center">
+            <div className="col-md-6">
+              <div className="card">
+                <div class="card-body profile">
+                  <div class="profile-pic text-center">
+                    <img src={user.picture} alt="user"/></div>
+                  <h2 class="name">{this.state.Info.Name}</h2>
+                  <p class="email">{this.state.Info.Email}</p>
+                  <p class="sector">{this.state.Info.Sector}</p>
+                  <div class="agree-to-terms-container">
+                    <p class="terms-label">Agree to Terms</p>
+                    <p class="agree-to-terms-value">{this.state.Info.AgreeToTerms ? "Yes" : "Not Yet"}</p>
+                  </div>
+                  
+                  <button onClick={this.handleEditButton} class="edit-button waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Edit</button>
+                </div>
+              </div>
+            </div>
           </div>
-          
-          <button onClick={this.handlebutton} class="edit-button waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Edit</button>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
       </>
     );
   }

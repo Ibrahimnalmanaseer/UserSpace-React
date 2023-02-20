@@ -44,7 +44,7 @@ componentDidMount = () => {
             axios
               .get(`https://blooming-woodland-26589.herokuapp.com/`)
               .then((result) => {
-                console.log("resulttttt",result.data)
+                
                 
                 this.setState({
                     selectors: result.data,
@@ -70,7 +70,7 @@ handleData=(event)=>{
         Sector:event.target.category.value,
         AgreeToTerms:this.state.termOfService,
     }
-    this.props.updateInfo(obj)
+    this.props.updateUserInfo(obj)
     axios
     .put('https://blooming-woodland-26589.herokuapp.com/updateinfo',obj)
 
@@ -87,56 +87,56 @@ handleData=(event)=>{
         return (
      
         <>
-        <Modal show={this.props.show} onHide={this.props.closeShow}>
-  <Modal.Header closeButton>
-    <Modal.Title>User Info</Modal.Title>
-  </Modal.Header>
-  <Modal.Body>
-    <Container>
-      <Form onSubmit={this.handleData} className="py-4">
-        <Row className="mb-3">
-          <Form.Group as={Col} controlId="formBasicText">
-            <Form.Label>User Name</Form.Label>
-            <Form.Control type="text" placeholder="Enter Your name" name="name" defaultValue={this.props.userInfo.Name} />
-          </Form.Group>
-        </Row>
-        <Row className="mb-3">
-          <Form.Group as={Col}>
-            <Form.Label>Selectors</Form.Label>
-            <Form.Select id="category" defaultValue={this.props.userInfo.Sector} onClick={this.handleChangeCategory}>
-              {this.state.selectors.map((item, index) => (
-                <optgroup label={item.category} key={index}>
-                  {item.subcategories.map((sub, subIndex) => (
-                    <option key={subIndex} value={sub}>
-                      {sub}
-                    </option>
-                  ))}
-                </optgroup>
-              ))}
-            </Form.Select>
-          </Form.Group>
-        </Row>
-        <Row className="mb-3">
-          <Form.Group as={Col} controlId="formBasicCheckbox">
-            <Form.Check
-              defaultChecked={this.props.userInfo.AgreeToTerms}
-              type="checkbox"
-              label="Agree to terms"
-              onClick={this.handleChangeTerm}
-            />
-          </Form.Group>
-        </Row>
-        <Row className="mb-3">
-          <Col xs={{ span: 6, offset: 3 }} md={{ span: 4, offset: 4 }}>
-            <Button variant="primary" type="submit" onClick={this.props.closeShow}>
-              Save!
-            </Button>
-          </Col>
-        </Row>
-      </Form>
-    </Container>
-  </Modal.Body>
-</Modal>
+          <Modal show={this.props.showModal} onHide={this.props.closeModal}>
+            <Modal.Header closeButton>
+              <Modal.Title>User Info</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Container>
+                <Form onSubmit={this.handleData} className="py-4">
+                  <Row className="mb-3">
+                    <Form.Group as={Col} controlId="formBasicText">
+                      <Form.Label>User Name</Form.Label>
+                      <Form.Control type="text" placeholder="Enter Your name" name="name" defaultValue={this.props.userInfo.Name} />
+                    </Form.Group>
+                  </Row>
+                  <Row className="mb-3">
+                    <Form.Group as={Col}>
+                      <Form.Label>Selectors</Form.Label>
+                      <Form.Select id="category" defaultValue={this.props.userInfo.Sector} onClick={this.handleChangeCategory}>
+                        {this.state.selectors.map((item, index) => (
+                          <optgroup label={item.category} key={index}>
+                            {item.subcategories.map((sub, subIndex) => (
+                              <option key={subIndex} value={sub}>
+                                {sub}
+                              </option>
+                            ))}
+                          </optgroup>
+                        ))}
+                      </Form.Select>
+                    </Form.Group>
+                  </Row>
+                  <Row className="mb-3">
+                    <Form.Group as={Col} controlId="formBasicCheckbox">
+                      <Form.Check
+                        defaultChecked={this.props.userInfo.AgreeToTerms}
+                        type="checkbox"
+                        label="Agree to terms"
+                        onClick={this.handleChangeTerm}
+                      />
+                    </Form.Group>
+                  </Row>
+                  <Row className="mb-3">
+                    <Col xs={{ span: 6, offset: 3 }} md={{ span: 4, offset: 4 }}>
+                      <Button variant="primary" type="submit" onClick={this.props.closeModal}>
+                        Save!
+                      </Button>
+                    </Col>
+                  </Row>
+                </Form>
+              </Container>
+            </Modal.Body>
+          </Modal>
 
     </>
         )
