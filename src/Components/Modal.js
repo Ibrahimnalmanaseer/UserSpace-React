@@ -102,7 +102,7 @@ handleData=(event)=>{
                   </Row>
                   <Row className="mb-3">
                     <Form.Group as={Col}>
-                      <Form.Label>Selectors</Form.Label>
+                      <Form.Label>Sector</Form.Label>
                       <Form.Select id="category" defaultValue={this.props.userInfo.Sector} onClick={this.handleChangeCategory}>
                         {this.state.selectors.map((item, index) => (
                           <optgroup label={item.category} key={index}>
