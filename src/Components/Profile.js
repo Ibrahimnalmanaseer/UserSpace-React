@@ -71,19 +71,21 @@ class Profile extends React.Component {
 
 <div className="container1">
   <div className="row justify-content-center">
-    <div className="col-md-8">
+    <div className="col-md-6">
       <div className="card">
-      <div class="card-body little-profile text-center">
-  <div class="pro-img"><img src={user.picture} alt="user"/></div>
-  <h4 class="m-b-0">{this.state.Info.Email}</h4>
-  <h3 class="m-b-0">{this.state.Info.Name}</h3>
-  <p>{this.state.Info.Sector}</p>
-  <div class="agree-to-terms-container">
-    <p>Agree to Terms:</p>
-    <p class="agree-to-terms-value">{this.state.Info.AgreeToTerms ? "Yes" : "No"}</p>
-  </div>
-  <button onClick={this.handlebutton} class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Edit</button>
-</div>
+        <div class="card-body profile">
+          <div class="profile-pic text-center">
+            <img src={user.picture} alt="user"/></div>
+          <h2 class="name">{this.state.Info.Name}</h2>
+          <p class="email">{this.state.Info.Email}</p>
+          <p class="sector">{this.state.Info.Sector}</p>
+          <div class="agree-to-terms-container">
+            <p class="terms-label">Agree to Terms</p>
+            <p class="agree-to-terms-value">{this.state.Info.AgreeToTerms ? "Yes" : "Not Yet"}</p>
+          </div>
+          
+          <button onClick={this.handlebutton} class="edit-button waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Edit</button>
+        </div>
       </div>
     </div>
   </div>
