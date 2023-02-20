@@ -48,7 +48,7 @@ class Profile extends React.Component {
       AgreeToTerms: false,
     };
     axios
-      .post(`http://localhost:3002/userinfo`, UserInfo)
+      .post(`https://blooming-woodland-26589.herokuapp.com/userinfo`, UserInfo)
       .then((result) => {
         
         this.setState({

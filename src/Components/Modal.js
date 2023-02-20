@@ -42,7 +42,7 @@ handleChangeTerm = (e) => {
 
 componentDidMount = () => {
             axios
-              .get(`http://localhost:3002/`)
+              .get(`https://blooming-woodland-26589.herokuapp.com/`)
               .then((result) => {
                 console.log("resulttttt",result.data)
                 
@@ -72,7 +72,7 @@ handleData=(event)=>{
     }
     this.props.updateInfo(obj)
     axios
-    .put('http://localhost:3002/updateinfo',obj)
+    .put('https://blooming-woodland-26589.herokuapp.com/updateinfo',obj)
 
     
     
