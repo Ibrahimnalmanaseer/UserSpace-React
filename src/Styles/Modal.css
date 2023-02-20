@@ -1,0 +1,61 @@
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .form-group {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .form-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+  }
+  
+  .form-select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    appearance: none;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><path fill="%23B6B6B6" d="M0 0l6 6 6-6"/></svg>')
+      no-repeat right 0.75rem center/8px 10px;
+  }
+  
+  .checkbox-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox-label {
+    margin-left: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .btn-save {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  @media (min-width: 576px) {
+    .modal-body {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+  
