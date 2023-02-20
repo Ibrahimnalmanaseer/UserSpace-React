@@ -96,7 +96,7 @@ handleData=(event)=>{
                 <Form onSubmit={this.handleData} className="py-4">
                   <Row className="mb-3">
                     <Form.Group as={Col} controlId="formBasicText">
-                      <Form.Label>User Name</Form.Label>
+                      <Form.Label>Name</Form.Label>
                       <Form.Control type="text" placeholder="Enter Your name" name="name" defaultValue={this.props.userInfo.Name} />
                     </Form.Group>
                   </Row>
