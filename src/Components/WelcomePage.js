@@ -11,7 +11,7 @@ class WelcomePage extends React.Component{
 
         return(
             <div class="welcome">
-            <h1>Welcome!</h1>
+            <h1>Welcome to The User Space!</h1>
             <p>Thank you for visiting. We hope you find everything you need here.</p>
             <div className='headerbtn'>
             <LoginButton />
